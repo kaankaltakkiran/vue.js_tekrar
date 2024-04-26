@@ -52,6 +52,9 @@
     <ChildComponent :msg="message" />
     <!--emit örneği-->
     <ChildEmitComponent @response="(msg) => childMsg = msg" />
+    <p>{{ childMsg }}</p>
+    <!--slot örneği-->
+    <ChildSlotComponent>Message: {{ msg }}</ChildSlotComponent>
 
 
 </template>
@@ -61,6 +64,7 @@ import {ref,watchEffect,onMounted,onUnmounted} from 'vue'
 import Example1 from './components/Example1.vue';
 import ChildComponent from './components/ChildComponent.vue';
 import ChildEmitComponent from './components/ChildEmitComponent.vue';
+import ChildSlotComponent from './components/ChildSlotComponent.vue';
 //data tanımlamaları
 const title = ref('Hello Vue 3');
 const description = ref('This is a simple example of Vue 3');
@@ -103,6 +107,8 @@ onUnmounted(() => {
 const message = ref('This is a message from parent');
 //emit örneği
 const childMsg = ref('No child msg yet');
+//slot örneği
+const msg = ref('from parent')
 </script>
 <style>
 .title {

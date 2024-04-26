@@ -55,6 +55,8 @@
     <p>{{ childMsg }}</p>
     <!--slot örneği-->
     <ChildSlotComponent>Message: {{ msg }}</ChildSlotComponent>
+    <!--computed örneği-->
+    <ComputedExample/>
 
 
 </template>
@@ -65,6 +67,7 @@ import Example1 from './components/Example1.vue';
 import ChildComponent from './components/ChildComponent.vue';
 import ChildEmitComponent from './components/ChildEmitComponent.vue';
 import ChildSlotComponent from './components/ChildSlotComponent.vue';
+import ComputedExample from './components/ComputedExample.vue';
 //data tanımlamaları
 const title = ref('Hello Vue 3');
 const description = ref('This is a simple example of Vue 3');

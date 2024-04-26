@@ -48,7 +48,8 @@
     <Example1 />
     <!--yaşam döngüsü örneği-->
     <p>Ben yaşam döngüsü örneğiyim</p>
-  
+    <!--props örneği-->
+    <ChildComponent :msg="message" />
 
 
 </template>
@@ -56,6 +57,7 @@
 <script setup>
 import {ref,watchEffect,onMounted,onUnmounted} from 'vue'
 import Example1 from './components/Example1.vue';
+import ChildComponent from './components/ChildComponent.vue';
 //data tanımlamaları
 const title = ref('Hello Vue 3');
 const description = ref('This is a simple example of Vue 3');
@@ -94,6 +96,8 @@ onMounted(() => {
 onUnmounted(() => {
     console.log('Component unmounted');
 });
+//props örneği
+const message = ref('This is a message from parent');
 </script>
 <style>
 .title {

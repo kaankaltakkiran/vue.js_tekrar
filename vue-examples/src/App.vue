@@ -50,6 +50,8 @@
     <p>Ben yaşam döngüsü örneğiyim</p>
     <!--props örneği-->
     <ChildComponent :msg="message" />
+    <!--emit örneği-->
+    <ChildEmitComponent @response="(msg) => childMsg = msg" />
 
 
 </template>
@@ -58,6 +60,7 @@
 import {ref,watchEffect,onMounted,onUnmounted} from 'vue'
 import Example1 from './components/Example1.vue';
 import ChildComponent from './components/ChildComponent.vue';
+import ChildEmitComponent from './components/ChildEmitComponent.vue';
 //data tanımlamaları
 const title = ref('Hello Vue 3');
 const description = ref('This is a simple example of Vue 3');
@@ -98,6 +101,8 @@ onUnmounted(() => {
 });
 //props örneği
 const message = ref('This is a message from parent');
+//emit örneği
+const childMsg = ref('No child msg yet');
 </script>
 <style>
 .title {
